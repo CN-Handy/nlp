@@ -1,0 +1,293 @@
+{
+  "game_id": "game_20260528_234446",
+  "start_time": "2026-05-28 23:44:46",
+  "end_time": "2026-05-28 23:44:46",
+  "config_name": "mini_4",
+  "role_assignment": {
+    "0": "seer",
+    "1": "witch",
+    "2": "villager",
+    "3": "werewolf"
+  },
+  "player_styles": {
+    "0": "random",
+    "1": "random",
+    "2": "cautious",
+    "3": "balanced"
+  },
+  "dialogues": [
+    {
+      "game_id": "game_20260528_234446",
+      "day": 0,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "游戏开始！角色已秘密分配。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.238762",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 0,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "玩家0（预言家） 已就位。",
+      "visible_to": [
+        0
+      ],
+      "timestamp": "2026-05-28T23:44:46.238794",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 0,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "玩家1（女巫） 已就位。",
+      "visible_to": [
+        1
+      ],
+      "timestamp": "2026-05-28T23:44:46.238806",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 0,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "玩家2（村民） 已就位。",
+      "visible_to": [
+        2
+      ],
+      "timestamp": "2026-05-28T23:44:46.238811",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 0,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "玩家3（狼人） 已就位。",
+      "visible_to": [
+        3
+      ],
+      "timestamp": "2026-05-28T23:44:46.238818",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "夜晚-狼人",
+      "speaker_id": 3,
+      "speaker_name": "玩家3（狼人）",
+      "content": "狼人选择击杀 玩家0。",
+      "visible_to": [
+        3
+      ],
+      "timestamp": "2026-05-28T23:44:46.239039",
+      "action_type": "kill",
+      "target_id": 0
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "夜晚-预言家",
+      "speaker_id": 0,
+      "speaker_name": "玩家0（预言家）",
+      "content": "查验 玩家2 结果是【好人】。",
+      "visible_to": [
+        0
+      ],
+      "timestamp": "2026-05-28T23:44:46.239089",
+      "action_type": "check",
+      "target_id": 2
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "天亮了，昨夜 玩家0 惨遭杀害。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239125",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-讨论",
+      "speaker_id": 1,
+      "speaker_name": "玩家1（女巫）",
+      "content": "我建议大家冷静分析昨晚的情况。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239159",
+      "action_type": "speak",
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-讨论",
+      "speaker_id": 2,
+      "speaker_name": "玩家2（村民）",
+      "content": "我怀疑玩家编号偏大的几位，理由是他们太安静了。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239181",
+      "action_type": "speak",
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-讨论",
+      "speaker_id": 3,
+      "speaker_name": "玩家3（狼人）",
+      "content": "我怀疑玩家编号偏大的几位，理由是他们太安静了。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239199",
+      "action_type": "speak",
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-投票",
+      "speaker_id": 1,
+      "speaker_name": "玩家1（女巫）",
+      "content": "投票给 玩家2。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239226",
+      "action_type": "vote",
+      "target_id": 2
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-投票",
+      "speaker_id": 2,
+      "speaker_name": "玩家2（村民）",
+      "content": "投票给 玩家1。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239247",
+      "action_type": "vote",
+      "target_id": 1
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "白天-投票",
+      "speaker_id": 3,
+      "speaker_name": "玩家3（狼人）",
+      "content": "投票给 玩家1。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239266",
+      "action_type": "vote",
+      "target_id": 1
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "投票结果：玩家1（女巫） 被投票出局。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239276",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "系统公告",
+      "speaker_id": null,
+      "speaker_name": "系统",
+      "content": "狼人阵营获胜！",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.239284",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "赛后总结",
+      "speaker_id": 0,
+      "speaker_name": "玩家0（预言家）",
+      "content": "需改进发言逻辑与投票判断。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.246770",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "赛后总结",
+      "speaker_id": 1,
+      "speaker_name": "玩家1（女巫）",
+      "content": "需改进发言逻辑与投票判断。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.246792",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "赛后总结",
+      "speaker_id": 2,
+      "speaker_name": "玩家2（村民）",
+      "content": "需改进发言逻辑与投票判断。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.246800",
+      "action_type": null,
+      "target_id": null
+    },
+    {
+      "game_id": "game_20260528_234446",
+      "day": 1,
+      "phase": "赛后总结",
+      "speaker_id": 3,
+      "speaker_name": "玩家3（狼人）",
+      "content": "需改进发言逻辑与投票判断。",
+      "visible_to": null,
+      "timestamp": "2026-05-28T23:44:46.246804",
+      "action_type": null,
+      "target_id": null
+    }
+  ],
+  "winner": "evil",
+  "death_order": [
+    {
+      "player_id": 0,
+      "role": "seer",
+      "day": 1,
+      "cause": "night_kill"
+    },
+    {
+      "player_id": 1,
+      "role": "witch",
+      "day": 1,
+      "cause": "vote"
+    }
+  ],
+  "summaries": {
+    "0": "需改进发言逻辑与投票判断。",
+    "1": "需改进发言逻辑与投票判断。",
+    "2": "需改进发言逻辑与投票判断。",
+    "3": "需改进发言逻辑与投票判断。"
+  }
+}

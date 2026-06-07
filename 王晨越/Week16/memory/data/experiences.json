@@ -1,0 +1,162 @@
+[
+  {
+    "game_id": "game_20260528_234446",
+    "role": "seer",
+    "player_id": 0,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "witch",
+    "player_id": 1,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "villager",
+    "player_id": 2,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "werewolf",
+    "player_id": 3,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "seer",
+    "player_id": 0,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "witch",
+    "player_id": 1,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "villager",
+    "player_id": 2,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_20260528_234446",
+    "role": "werewolf",
+    "player_id": 3,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:44:46"
+  },
+  {
+    "game_id": "game_092ec84d1b5c",
+    "role": "villager",
+    "player_id": 0,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_092ec84d1b5c",
+    "role": "witch",
+    "player_id": 1,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_092ec84d1b5c",
+    "role": "seer",
+    "player_id": 2,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_092ec84d1b5c",
+    "role": "werewolf",
+    "player_id": 3,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "villager",
+    "player_id": 0,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "werewolf",
+    "player_id": 1,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "villager",
+    "player_id": 2,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "werewolf",
+    "player_id": 3,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "seer",
+    "player_id": 0,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "villager",
+    "player_id": 1,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "werewolf",
+    "player_id": 2,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  },
+  {
+    "game_id": "game_20260528_234504",
+    "role": "witch",
+    "player_id": 3,
+    "summary": "需改进发言逻辑与投票判断。",
+    "winner": "evil",
+    "timestamp": "2026-05-28 23:45:04"
+  }
+]

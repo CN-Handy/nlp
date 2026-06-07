@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 狼人杀 — 观战台</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; margin: 0; background: #1a1a2e; color: #eee; }
+    header { padding: 1rem 2rem; background: #16213e; border-bottom: 1px solid #0f3460; }
+    h1 { margin: 0; font-size: 1.4rem; }
+    main { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; padding: 1rem 2rem; min-height: calc(100vh - 60px); }
+    .panel { background: #16213e; border-radius: 8px; padding: 1rem; }
+    button { margin: 0.25rem; padding: 0.5rem 1rem; cursor: pointer; border: none; border-radius: 4px; background: #e94560; color: #fff; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    button.secondary { background: #0f3460; }
+    select, input { padding: 0.4rem; margin: 0.25rem 0; width: 100%; }
+    .log { height: 60vh; overflow-y: auto; font-size: 0.9rem; line-height: 1.6; }
+    .log-item { padding: 0.35rem 0; border-bottom: 1px solid #0f3460; }
+    .phase { color: #e94560; font-size: 0.8rem; }
+    .alive { color: #4ecca3; }
+    .summary-box { margin-top: 0.5rem; padding: 0.5rem; background: #0f3460; border-radius: 4px; font-size: 0.85rem; }
+    .status { margin: 0.5rem 0; }
+    .error { color: #e94560; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>AI 狼人杀 — 观战台</h1>
+      <small>API: {{ apiBase }}</small>
+    </header>
+    <main>
+      <aside class="panel">
+        <h3>控制</h3>
+        <label>配置</label>
+        <select v-model="configName">
+          <option value="mini_4">mini_4 (4人)</option>
+          <option value="standard_6">standard_6 (6人)</option>
+          <option value="standard_8">standard_8 (8人)</option>
+        </select>
+        <div style="margin-top: 1rem">
+          <button @click="createGame" :disabled="loading">新建对局</button>
+          <button class="secondary" @click="step" :disabled="!gameId || loading || state?.is_finished">推进一步</button>
+          <button @click="runAll" :disabled="!gameId || loading || state?.is_finished">一键跑完</button>
+        </div>
+        <div class="status" v-if="state">
+          <p>ID: <code>{{ gameId }}</code></p>
+          <p>第 {{ state.day }} 天 · {{ state.phase }}</p>
+          <p class="alive">存活: {{ state.alive_players?.join(', ') }}</p>
+          <p v-if="state.is_finished">胜利方: {{ winnerText }}</p>
+        </div>
+        <p class="error" v-if="error">{{ error }}</p>
+        <h3 v-if="summaries && Object.keys(summaries).length">赛后总结</h3>
+        <div v-for="(text, pid) in summaries" :key="pid" class="summary-box">
+          玩家{{ pid }}: {{ text }}
+        </div>
+      </aside>
+      <section class="panel log">
+        <h3>对局日志</h3>
+        <div v-for="(d, i) in dialogues" :key="i" class="log-item">
+          <span class="phase">[第{{ d.day }}天·{{ d.phase }}]</span>
+          <span v-if="d.speaker_name">{{ d.speaker_name }}：</span>
+          {{ d.content }}
+        </div>
+        <p v-if="!dialogues.length">暂无日志，请新建对局并开始。</p>
+      </section>
+    </main>
+  </div>
+  <script>
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          apiBase: 'http://127.0.0.1:8000',
+          configName: 'mini_4',
+          gameId: null,
+          state: null,
+          dialogues: [],
+          summaries: {},
+          loading: false,
+          error: null,
+        };
+      },
+      computed: {
+        winnerText() {
+          const w = this.state?.winner;
+          return w === 'good' ? '好人阵营' : w === 'evil' ? '狼人阵营' : w;
+        },
+      },
+      methods: {
+        async createGame() {
+          this.loading = true;
+          this.error = null;
+          try {
+            const r = await fetch(`${this.apiBase}/games`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ config_name: this.configName, auto_run: false }),
+            });
+            const data = await r.json();
+            if (!r.ok) throw new Error(data.detail || '创建失败');
+            this.gameId = data.game_id;
+            this.state = data.state;
+            this.dialogues = [];
+            this.summaries = {};
+          } catch (e) {
+            this.error = e.message;
+          } finally {
+            this.loading = false;
+          }
+        },
+        async refresh() {
+          if (!this.gameId) return;
+          const r = await fetch(`${this.apiBase}/games/${this.gameId}`);
+          const data = await r.json();
+          this.state = data.state;
+          this.dialogues = data.dialogues || [];
+          this.summaries = data.summaries || {};
+        },
+        async step() {
+          this.loading = true;
+          try {
+            await fetch(`${this.apiBase}/games/${this.gameId}/step`, { method: 'POST' });
+            await this.refresh();
+          } catch (e) {
+            this.error = e.message;
+          } finally {
+            this.loading = false;
+          }
+        },
+        async runAll() {
+          this.loading = true;
+          try {
+            const r = await fetch(`${this.apiBase}/games/${this.gameId}/run`, { method: 'POST' });
+            const data = await r.json();
+            this.state = data.state;
+            this.dialogues = data.record?.dialogues || [];
+            this.summaries = data.record?.summaries || {};
+          } catch (e) {
+            this.error = e.message;
+          } finally {
+            this.loading = false;
+          }
+        },
+      },
+    }).mount('#app');
+  </script>
+</body>
+</html>
